@@ -1,0 +1,41 @@
+def calculate(choice, num1, num2):
+    if choice == 'add':
+        return num1 + num2
+    elif choice == 'subtract':
+        return num1 - num2
+    elif choice == 'multiply':
+        return num1 * num2
+    elif choice == 'divide':
+        if num2 != 0:
+            return num1 / num2
+        else:
+            return "Error: Cannot divide by zero."
+    else:
+        return "Invalid choice."
+
+name = (input("Type your name."))
+print("Choose an operation:")
+print("1. Add")
+print("2. Subtract")
+print("3. Multiply")
+print("4. Divide")
+
+operation = input("Enter the number of your choice (1-4): ")
+
+if operation == '1':
+    user_choice = 'add'
+elif operation == '2':
+    user_choice = 'subtract'
+elif operation == '3':
+    user_choice = 'multiply'
+elif operation == '4':
+    user_choice = 'divide'
+else:
+    print("Invalid choice.")
+    exit()
+    
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+
+result = calculate(user_choice, num1, num2)
+print(f"Hello {name}, the result is: {result}")
